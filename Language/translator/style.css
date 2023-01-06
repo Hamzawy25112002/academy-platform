@@ -153,6 +153,9 @@ body.dark {
   font-size: 18px;
   font-family: "Poppins", sans-serif;
 }
+span{
+  font-weight: bold;
+}
 
 
 .container .text-area .chars {
@@ -191,6 +194,7 @@ body.dark {
   transform: translateX(-50%) scale(1.1);
 }
 .card-bottom {
+  font-weight: bold;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -200,17 +204,22 @@ body.dark {
 }
 .card-bottom p {
   color: #FFBD59;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 .card-bottom label {
   height: 50px;
-  display: flex;
+  display: none;
   align-items: center;
   gap: 20px;
   padding: 0 20px;
   cursor: pointer;
   border-radius: 30px;
   background-color: var(--bg-color);
+}
+h2{
+  color: #f1f1f1;
+  letter-spacing: 0.2rem;
 }
 .card-bottom label:hover {
   color: var(--primary-text-color);
@@ -225,6 +234,7 @@ body.dark {
 }
 
 .card-bottom button {
+  font-weight: bold;
   height: 50px;
   display: flex;
   align-items: center;
