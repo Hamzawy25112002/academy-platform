@@ -787,7 +787,7 @@ display: block;
     margin-top: 1rem;
   }
   .team .row .card{
-    height: 85vh;
+    height: 100%;
   }
 
   .service .row{
