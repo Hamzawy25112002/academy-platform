@@ -18,9 +18,7 @@ html{
   scroll-behavior: smooth;
 }
 
-body{
-  overflow-x: hidden;
-}
+
 
 .heading{
   margin:2rem;
@@ -368,7 +366,7 @@ display: block;
 }
 
 .team{
-  min-height: 100vh;
+  min-height: 100%;
   width:100vw;
   text-align: center;
   background-color: #112A4A;
@@ -787,7 +785,7 @@ display: block;
     margin-top: 1rem;
   }
   .team .row .card{
-    height: 65vh;
+    height: 65rem;
   }
 
   .service .row{
@@ -839,7 +837,7 @@ display: block;
 
 }
 
-@media (max-width:550px){
+@media (min-width:550px){
   .footer{
    
     flex-flow: column;
@@ -861,4 +859,7 @@ display: block;
 }
 .morelink {
   display: block;
+}
+.team .row .card{
+  height: 60rem;
 }
