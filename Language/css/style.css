@@ -18,7 +18,9 @@ html{
   scroll-behavior: smooth;
 }
 
-
+body{
+  overflow-x: hidden;
+}
 
 .heading{
   margin:2rem;
@@ -468,7 +470,9 @@ display: block;
 .team .row .card .info button{
 
     margin-top: 1rem;
-    width: 13rem;
+    letter-spacing: 0.3rem;
+    font-size: 2rem;
+    width: 15rem;
     background-color: #112A4A;
     border-radius: 1rem;
     
@@ -655,17 +659,19 @@ display: block;
 }
 
 .footer{
-  width:100vw;
+  flex-wrap: wrap;
   display: flex;
+
+  width:100vw;
   align-items: center;
   justify-content: space-between;
   padding:2rem 2rem;
-  
   overflow: hidden;
   background:var(--color);
 }
 
 .footer h1{
+  font-size: medium;
   color:#112A4A;
   letter-spacing: .1rem;
   font-weight: 700;
@@ -673,35 +679,97 @@ display: block;
 
 
 
-.footer .icons a{
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    
-    margin: 20px;
-    border-radius: 10%;
-    box-shadow:20px #00000070;
-    color: #112A4A;
-    overflow: hidden;
-    position: relative;
-    line-height: 50px;
-    font-size: 30px;
-    transition: 0.2s linear;
-}
-.footer .icons a:hover{
-   transform: scale(1.3);
-   color: white; 
-}
-.footer .icons .linked:hover{
-    color: #0F6DBF;
-}
 
-.footer .icons .instgram:hover{
-    color: #c13584;
-  }
-  .footer .icons .facebook:hover {
-    color: #004480;
-  }
+.wrapper{
+  display: flex;
+  
+  
+}
+.wrapper .icon{
+  margin: 0 20px;
+  margin-left: 30px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon span{
+  display: block;
+  height: 60px;
+  width: 60px;
+  
+  margin-top: 8rem;
+  background: #112A4A;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon span i{
+  color: var(--color);
+  line-height: 60px;
+  font-size: 25px;
+}
+.wrapper .icon .tooltip{
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background: var(--color);
+  color: var(--color);
+  margin-top: 3rem;
+  padding: 7px 15px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 25px;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover .tooltip{
+  top: -10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.icon .tooltip:before{
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%) rotate(45deg);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover span{
+  color: #fff;
+}
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip{
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+}
+.wrapper .facebook:hover span,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip:before{
+  background: #3B5999;
+}
+.wrapper .twitter:hover span,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip:before{
+  background: #075E54;
+}
+.wrapper .instagram:hover span,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip:before{
+  background: #e1306c;
+}
 
 
 
@@ -834,27 +902,26 @@ display: block;
   .faq .row .accordion-container{
     width:100%;
   }
+  .footer{
+    height: 100%;
+  }
+ 
 
 }
 
 @media (min-width:550px){
   .footer{
-   
+   height: 100%;
     flex-flow: column;
   }
   .footer h1{
     
     text-align: center;
-  }
 
-  
-  .footer .icons{
-    padding:1rem 0;
-    margin-left: 5rem;
-  }
 
 }
 .morecontent span {
+
   display: none;
 }
 .morelink {
@@ -862,4 +929,5 @@ display: block;
 }
 .team .row .card{
   height: 60rem;
+}
 }
